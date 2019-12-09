@@ -7,8 +7,10 @@
     <div id="hello">
     </div>
         <div id="createform">
-        <textarea id="questioninput" placeholder="Enter JSON question format here"></textarea>
-        <button id="create">create</button>
+            <label>Question</label><input name="question" /> <br />
+            <label>Answers</label><input name="options" placeholder="Enter possible answers, separated by a ,"/> <br />
+        <!--textarea id="questioninput" placeholder="Enter JSON question format here"></textarea-->
+            <button id="create">create</button>
         </div>
         <script type="module">
 
@@ -17,7 +19,20 @@
 
         document.querySelector("#create").addEventListener("click", (ev) => {
             ev.preventDefault();
-            poll.renderQuestion(document.querySelector("#questioninput").value);
+
+            var questionFormat = {
+                question: document.querySelector("input[name=question]").value,
+                options: []
+            };
+
+            var options = document.querySelector("input[name=options]").value.split(",");
+            for (const option of options) {
+                questionFormat.options.push(option);
+            }
+
+            console.log(options);
+
+            poll.renderQuestion(JSON.stringify(questionFormat));
             document.querySelector("#createform").style.display = "none";
         });
 
