@@ -1,4 +1,12 @@
+[
 {
   "question" : "This is a question",
   "options": ["Yes", "No"]
-}
+},
+  {"question":  "THis is another question",
+  "options":  ["maybe", "perhaps"]}
+  ]
+
+<p>This is a question</p>
+<option name="???" value="Yes">Yes</option>
+<option name="???" value="No">No</option>
