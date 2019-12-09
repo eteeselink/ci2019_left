@@ -12,6 +12,20 @@
 <body>
     <div id="hello">
     </div>
+        <textarea id="questioninput" placeholder="Enter JSON question format here"></textarea>
+        <button id="create">create</button>
+    <script type="module">
+
+        import {Poll} from "./poll.js";
+        const poll = new Poll(document.getElementById("hello"));
+
+        document.querySelector("#create").addEventListener("click", (ev) => {
+            ev.preventDefault();
+            poll.renderQuestions(document.querySelector("#questioninput").value);
+        });
+
+    </script>
+
 
     <div id="drawing">
     </div>
