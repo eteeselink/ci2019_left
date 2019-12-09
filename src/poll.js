@@ -33,7 +33,7 @@ export class Poll {
             this.element.innerHTML = `<p>The answer that was picked was ${answer}.</p><div id="pizza"></div>`;
             
             //makeAsciiArt(this.element.querySelector("#pizza"));
-            renderResultChart([value]);
+            this.renderResultChart([1], [answer]);
         })
     }
 
