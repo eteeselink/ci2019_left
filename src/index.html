@@ -6,6 +6,7 @@
         import {Poll} from "./poll.js";
         const poll = new Poll(document.getElementById("hello"), Plotly);
         poll.render("George");
+        poll.renderQuestion('{"question":"This is a question","options":["Yes","No","Maybe"]}');
     </script>
 </head>
 <body>
