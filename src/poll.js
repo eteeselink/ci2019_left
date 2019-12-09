@@ -10,15 +10,12 @@ export class Poll {
 
     render(name) {
         this.element.innerHTML = `
-            Hi ${name}! What's the best pizza?<br>
-            <input type="radio" name="pizza" value="Margherita" id="radio1">
-            <label for="radio1">Margherita</label><br>
+            This is a question<br>
+            <input type="radio" name="pizza" value="Yes" id="radio1">
+            <label for="radio1">Yes</label><br>
 
-            <input type="radio" name="pizza" value="Shoarma" id="radio2">
-            <label for="radio2">Shoarma</label><br>
-
-            <input type="radio" name="pizza" value="Lahmacun" id="radio3">
-            <label for="radio3">Lahmacun</label><br>
+            <input type="radio" name="pizza" value="No" id="radio2">
+            <label for="radio2">No</label><br>
 
             <button id="btn">Vote!</button>
         `;
