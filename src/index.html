@@ -1,14 +1,18 @@
 <html>
 <head>
     <title>Ooticracy</title>
+    <script src="plotly-latest.min.js"></script>
     <script type="module">
         import {Poll} from "./poll.js";
-        const poll = new Poll(document.getElementById("hello"));
+        const poll = new Poll(document.getElementById("hello"), Plotly);
         poll.render("George");
     </script>
 </head>
 <body>
     <div id="hello">
+    </div>
+
+    <div id="drawing">
     </div>
 </body>
 </html>

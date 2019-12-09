@@ -1,11 +1,13 @@
 import {makeAsciiArt} from "./art.js";
 
+
 export class Poll {
     /**
      * @param {HTMLElement} element 
      */
-    constructor(element) {
+    constructor(element, plotlib) {
         this.element = element;
+        this.plotlib = plotlib;
     }
 
     render(name) {
@@ -35,5 +37,20 @@ export class Poll {
             
             makeAsciiArt(this.element.querySelector("#pizza"));
         })
+    }
+
+    renderResultChart(data, labels) {
+        let layout = {
+            height: 400,
+            width: 500
+        };
+
+        let plotdef = [{
+            values: data || [19, 26, 55],
+            labels: labels || ['Residential', 'Non-Residential', 'Utility'],
+            type: 'pie'
+        }];
+
+        this.plotlib.newPlot("drawing", plotdef, layout);
     }
 }
