@@ -39,6 +39,10 @@ export class Poll {
         this.renderResultChart([1], [answer]);
     })
 
+    this.element.querySelector("#showresults").addEventListener("click", ev => {
+    })
+
+
 
     }
     render(name) {
@@ -66,6 +70,8 @@ export class Poll {
             //makeAsciiArt(this.element.querySelector("#pizza"));
             this.renderResultChart([1], [answer]);
         })
+
+
     }
 
     renderResultChart(data, labels) {
