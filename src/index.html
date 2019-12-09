@@ -2,26 +2,23 @@
 <head>
     <title>Ooticracy</title>
     <script src="plotly-latest.min.js"></script>
-    <script type="module">
-        import {Poll} from "./poll.js";
-        const poll = new Poll(document.getElementById("hello"), Plotly);
-        poll.render("George");
-        poll.renderQuestion('{"question":"This is a question","options":["Yes","No","Maybe"]}');
-    </script>
 </head>
 <body>
     <div id="hello">
     </div>
+        <div id="createform">
         <textarea id="questioninput" placeholder="Enter JSON question format here"></textarea>
         <button id="create">create</button>
-    <script type="module">
+        </div>
+        <script type="module">
 
         import {Poll} from "./poll.js";
         const poll = new Poll(document.getElementById("hello"));
 
         document.querySelector("#create").addEventListener("click", (ev) => {
             ev.preventDefault();
-            poll.renderQuestions(document.querySelector("#questioninput").value);
+            poll.renderQuestion(document.querySelector("#questioninput").value);
+            document.querySelector("#createform").style.display = "none";
         });
 
     </script>
