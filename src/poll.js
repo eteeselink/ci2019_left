@@ -26,6 +26,10 @@ export class Poll {
  this.element.innerHTML=text+'<br><button id="nextuser">Next User</button><button id="showresults">Show Results</button>';
 
  this.element.querySelector("#nextuser").addEventListener("click", ev => {
+     })
+
+    this.element.querySelector("#showresults").addEventListener("click", ev => {
+    
     // always add `preventDefault` in an event handler. otherwise, the browser
         // will do some default action which usually means submitting the data to the server, 
         // which causes the entire page to reload.
@@ -37,9 +41,8 @@ export class Poll {
         
         //makeAsciiArt(this.element.querySelector("#pizza"));
         this.renderResultChart([1], [answer]);
-    })
-
-    this.element.querySelector("#showresults").addEventListener("click", ev => {
+   
+    
     })
 
 
